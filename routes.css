@@ -1271,4 +1271,19 @@
         margin-bottom: 35px;
     }
 
+}/* ==========================================================
+   ROUTE CARDS – NATUURLIJKE HOOGTE
+   Voorkomt lege ruimte bij routes met minder informatie
+========================================================== */
+
+.home-routes .routes-grid {
+    align-items: start;
+}
+
+.home-routes .route-card {
+    height: auto;
+}
+
+.home-routes .route-card__content {
+    flex: none;
 }
