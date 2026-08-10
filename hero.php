@@ -1,156 +1,131 @@
 <?php
 /**
- * Hero V3
- * STOOPENDAAL
+ * Route Hero
  *
  * @package Stoopendaal
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
+
+$distance   = get_field( 'distance' );
+$duration   = get_field( 'duration' );
+$elevation  = get_field( 'hoogtemeters' );
+$difficulty = get_field( 'difficulty' );
+$summary    = get_field( 'summary' );
+$regio      = get_field( 'regio' );
 ?>
 
-<section class="hero-v2">
+<section class="route-hero">
 
-    <div class="hero-v2__background">
+    <div class="route-hero__image">
 
-        <div class="hero-v2__overlay">
+        <?php if ( has_post_thumbnail() ) : ?>
 
-            <div class="container">
+            <?php the_post_thumbnail( 'full' ); ?>
 
-                <div class="hero-v2__content">
+        <?php endif; ?>
 
-                    <span class="hero-v2__label">
-                        STOOPENDAAL GRAVELROADS
-                    </span>
-
-                    <h1>
-                        Ontdek de mooiste gravelroutes van
-                        <span>Nederland</span>
-                    </h1>
-
-                    <p>
-                        Meer dan <strong>300 zelf gereden routes</strong>,
-                        inclusief GPX-downloads, foto's,
-                        hoogteprofielen en praktische informatie.
-                    </p>
-
-                    <div class="hero-v2__buttons">
-
-                        <a href="#routes" class="button-primary">
-                            Bekijk routes
-                        </a>
-
-                        <a href="#kaart" class="button-secondary">
-                            Bekijk kaart
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+        <div class="route-hero__overlay"></div>
 
     </div>
 
-    <div class="hero-trust">
+    <div class="container">
 
-        <div class="container">
+        <div class="route-hero__content">
 
-            <div class="hero-trust__grid">
+            <?php if ( $regio ) : ?>
 
-                <div class="hero-trust__item">
+                <span class="route-hero__region">
 
-                    <div class="hero-trust__icon">
+                    📍 <?php echo esc_html( $regio ); ?>
 
-                        <?php
-                        if ( function_exists( 'stoopendaal_icon' ) ) {
-                            stoopendaal_icon( 'route' );
-                        }
-                        ?>
+                </span>
 
-                    </div>
+            <?php endif; ?>
 
-                    <div>
+            <h1 class="route-hero__title">
 
-                        <strong>300+</strong>
+                <?php the_title(); ?>
 
-                        <small>Zelf gereden routes</small>
+            </h1>
 
-                    </div>
+            <?php if ( $summary ) : ?>
 
-                </div>
+                <p class="route-hero__summary">
 
-                <div class="hero-trust__item">
+                    <?php echo esc_html( $summary ); ?>
 
-                    <div class="hero-trust__icon">
+                </p>
 
-                        <?php
-                        if ( function_exists( 'stoopendaal_icon' ) ) {
-                            stoopendaal_icon( 'download' );
-                        }
-                        ?>
+            <?php endif; ?>
 
-                    </div>
+            <div class="route-hero__stats">
 
-                    <div>
+                <?php if ( $distance ) : ?>
 
-                        <strong>Gratis</strong>
+                    <div class="route-stat">
 
-                        <small>GPX-downloads</small>
+                        <strong><?php echo esc_html( $distance ); ?> km</strong>
+
+                        <span>Afstand</span>
 
                     </div>
 
-                </div>
+                <?php endif; ?>
 
-                <div class="hero-trust__item">
+                <?php if ( $elevation ) : ?>
 
-                    <div class="hero-trust__icon">
+                    <div class="route-stat">
 
-                        <?php
-                        if ( function_exists( 'stoopendaal_icon' ) ) {
-                            stoopendaal_icon( 'podcast' );
-                        }
-                        ?>
+                        <strong><?php echo esc_html( $elevation ); ?> hm</strong>
+
+                        <span>Hoogtemeters</span>
 
                     </div>
 
-                    <div>
+                <?php endif; ?>
 
-                        <strong>Podcast</strong>
+                <?php if ( $duration ) : ?>
 
-                        <small>Reviews & verhalen</small>
+                    <div class="route-stat">
 
-                    </div>
+                        <strong><?php echo esc_html( $duration ); ?></strong>
 
-                </div>
-
-                <div class="hero-trust__item">
-
-                    <div class="hero-trust__icon">
-
-                        <?php
-                        if ( function_exists( 'stoopendaal_icon' ) ) {
-                            stoopendaal_icon( 'map' );
-                        }
-                        ?>
+                        <span>Duur</span>
 
                     </div>
 
-                    <div>
+                <?php endif; ?>
 
-                        <strong>12</strong>
+                <?php if ( $difficulty ) : ?>
 
-                        <small>Provincies</small>
+                    <div class="route-stat">
+
+                        <strong><?php echo esc_html( $difficulty ); ?></strong>
+
+                        <span>Moeilijkheid</span>
 
                     </div>
 
-                </div>
+                <?php endif; ?>
 
             </div>
+
+            <?php
+            $gpx = get_field( 'gpx_bestand' );
+
+            if ( $gpx ) :
+            ?>
+
+                <a
+                    href="<?php echo esc_url( $gpx['url'] ); ?>"
+                    class="btn btn--primary"
+                    download
+                >
+                    Download GPX
+                </a>
+
+            <?php endif; ?>
 
         </div>
 

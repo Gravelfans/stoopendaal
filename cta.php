@@ -1,108 +1,62 @@
 <?php
 /**
- * CTA Component
+ * Route CTA
  *
  * @package Stoopendaal
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$args = wp_parse_args(
-    $args ?? array(),
-    array(
-        'label'         => '',
-        'title'         => '',
-        'text'          => '',
-        'button'        => '',
-        'button_url'    => '',
-        'secondary'     => '',
-        'secondary_url' => '',
-        'class'         => '',
-    )
-);
-
-$classes = array(
-    'cta',
-);
-
-if ( ! empty( $args['class'] ) ) {
-    $classes[] = $args['class'];
-}
+$gpx = get_field( 'gpx_bestand' );
 ?>
 
-<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<section class="route-cta">
 
     <div class="container">
 
-        <div class="cta__inner">
+        <div class="route-cta-box">
 
-            <?php if ( ! empty( $args['label'] ) ) : ?>
+            <span class="route-section-label">
+                Klaar voor avontuur?
+            </span>
 
-                <span class="cta__label">
+            <h2>
 
-                    <?php echo esc_html( $args['label'] ); ?>
+                Trek eropuit en ontdek deze prachtige gravelroute.
 
-                </span>
+            </h2>
 
-            <?php endif; ?>
+            <p>
 
-            <?php if ( ! empty( $args['title'] ) ) : ?>
+                Download gratis de GPX, laad hem op je Garmin,
+                Wahoo of Komoot en geniet van een prachtige rit.
 
-                <h2 class="cta__title">
+            </p>
 
-                    <?php echo esc_html( $args['title'] ); ?>
+            <div class="route-cta-buttons">
 
-                </h2>
+                <?php if ( $gpx ) : ?>
 
-            <?php endif; ?>
+                    <a
+                        class="route-cta-primary"
+                        href="<?php echo esc_url( $gpx['url'] ); ?>"
+                        download>
 
-            <?php if ( ! empty( $args['text'] ) ) : ?>
+                        Download GPX
 
-                <p class="cta__text">
+                    </a>
 
-                    <?php echo esc_html( $args['text'] ); ?>
+                <?php endif; ?>
 
-                </p>
+                <a
+                    class="route-cta-secondary"
+                    href="<?php echo esc_url( get_post_type_archive_link( 'route' ) ); ?>">
 
-            <?php endif; ?>
+                    Bekijk alle routes
 
-            <?php if ( ! empty( $args['button'] ) || ! empty( $args['secondary'] ) ) : ?>
+                </a>
 
-                <div class="cta__buttons">
-
-                    <?php
-                    if ( ! empty( $args['button'] ) ) {
-
-                        get_template_part(
-                            'template-parts/components/button',
-                            null,
-                            array(
-                                'label' => $args['button'],
-                                'url'   => $args['button_url'],
-                                'style' => 'primary',
-                            )
-                        );
-
-                    }
-
-                    if ( ! empty( $args['secondary'] ) ) {
-
-                        get_template_part(
-                            'template-parts/components/button',
-                            null,
-                            array(
-                                'label' => $args['secondary'],
-                                'url'   => $args['secondary_url'],
-                                'style' => 'secondary',
-                            )
-                        );
-
-                    }
-                    ?>
-
-                </div>
-
-            <?php endif; ?>
+            </div>
 
         </div>
 

@@ -1,70 +1,42 @@
 <?php
 /**
- * Province Map Section
+ * Route Map
  *
  * @package Stoopendaal
  */
+
+defined( 'ABSPATH' ) || exit;
+
+$map = get_field( 'kaart_embed' );
+
+if ( ! $map ) {
+    return;
+}
 ?>
 
-<section id="kaart" class="map-section">
+<section class="route-map">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="route-map-header">
 
-            <span class="section-eyebrow">
-                Gravel in Nederland
+            <span class="route-section-label">
+                Routekaart
             </span>
 
             <h2>
-                Ontdek routes per provincie
+                Bekijk de route op de kaart
             </h2>
 
             <p>
-                Klik op een provincie en ontdek de mooiste gravelroutes, inclusief gratis GPX-downloads.
+                Verken de volledige route en plan jouw volgende gravelavontuur.
             </p>
 
         </div>
 
-        <div class="map-grid">
+        <div class="route-map-wrapper">
 
-            <div class="map-card">
-
-                <img
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/map/netherlands-map.png"
-                    alt="Kaart van Nederland">
-
-            </div>
-
-            <aside class="map-info">
-
-                <h3>Routes</h3>
-
-                <div class="info-item">
-
-                    <span>Totaal routes</span>
-
-                    <strong>300+</strong>
-
-                </div>
-
-                <div class="info-item">
-
-                    <span>Provincies</span>
-
-                    <strong>12</strong>
-
-                </div>
-
-                <div class="info-item">
-
-                    <span>Gratis GPX</span>
-
-                    <strong>100%</strong>
-
-                </div>
-
-            </aside>
+            <?php echo $map; ?>
 
         </div>
 

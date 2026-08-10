@@ -1,66 +1,156 @@
 <?php
 /**
- * Stats Component
+ * Route Stats
  *
  * @package Stoopendaal
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$args = wp_parse_args(
-    $args ?? array(),
-    array(
-        'items' => array(),
-        'class' => '',
-    )
-);
+$distance   = get_field( 'distance' );
+$duration   = get_field( 'duration' );
+$elevation  = get_field( 'hoogtemeters' );
+$difficulty = get_field( 'difficulty' );
+$regio      = get_field( 'regio' );
+$gravel     = get_field( 'gravelpercentage' );
 
-if ( empty( $args['items'] ) ) {
+if (
+    ! $distance &&
+    ! $duration &&
+    ! $elevation &&
+    ! $difficulty &&
+    ! $regio &&
+    ! $gravel
+){
     return;
-}
-
-$classes = array(
-    'stats',
-);
-
-if ( ! empty( $args['class'] ) ) {
-    $classes[] = $args['class'];
 }
 ?>
 
-<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<section class="route-stats">
 
     <div class="container">
 
-        <div class="stats__grid">
+        <div class="route-stats-grid">
 
-            <?php foreach ( $args['items'] as $item ) : ?>
+            <?php if ( $distance ) : ?>
 
-                <div class="stats__item">
+                <div class="route-stat-card">
 
-                    <?php if ( ! empty( $item['number'] ) ) : ?>
+                    <div class="route-stat-icon">📏</div>
 
-                        <div class="stats__number">
+                    <div class="route-stat-value">
+                        <?php echo esc_html( $distance ); ?> km
+                    </div>
 
-                            <?php echo esc_html( $item['number'] ); ?>
-
-                        </div>
-
-                    <?php endif; ?>
-
-                    <?php if ( ! empty( $item['label'] ) ) : ?>
-
-                        <div class="stats__label">
-
-                            <?php echo esc_html( $item['label'] ); ?>
-
-                        </div>
-
-                    <?php endif; ?>
+                    <div class="route-stat-label">
+                        Afstand
+                    </div>
 
                 </div>
 
-            <?php endforeach; ?>
+            <?php endif; ?>
+
+
+            <?php if ( $elevation ) : ?>
+
+                <div class="route-stat-card">
+
+                    <div class="route-stat-icon">⛰</div>
+
+                    <div class="route-stat-value">
+                        <?php echo esc_html( $elevation ); ?> hm
+                    </div>
+
+                    <div class="route-stat-label">
+                        Hoogtemeters
+                    </div>
+
+                </div>
+
+            <?php endif; ?>
+
+
+            <?php if ( $duration ) : ?>
+
+                <div class="route-stat-card">
+
+                    <div class="route-stat-icon">⏱</div>
+
+                    <div class="route-stat-value">
+                        <?php echo esc_html( $duration ); ?>
+                    </div>
+
+                    <div class="route-stat-label">
+                        Duur
+                    </div>
+
+                </div>
+
+            <?php endif; ?>
+
+
+            <?php if ( $difficulty ) : ?>
+
+                <div class="route-stat-card">
+
+                    <div class="route-stat-icon">⭐</div>
+
+                    <div class="route-stat-value">
+
+                        <?php echo esc_html( ucfirst( $difficulty ) ); ?>
+
+                    </div>
+
+                    <div class="route-stat-label">
+                        Moeilijkheid
+                    </div>
+
+                </div>
+
+            <?php endif; ?>
+
+
+            <?php if ( $regio ) : ?>
+
+                <div class="route-stat-card">
+
+                    <div class="route-stat-icon">📍</div>
+
+                    <div class="route-stat-value">
+
+                        <?php echo esc_html( $regio ); ?>
+
+                    </div>
+
+                    <div class="route-stat-label">
+                        Regio
+                    </div>
+
+                </div>
+
+            <?php endif; ?>
+
+
+            <?php if ( $gravel ) : ?>
+
+                <div class="route-stat-card">
+
+                    <div class="route-stat-icon">🚴</div>
+
+                    <div class="route-stat-value">
+
+                        <?php echo esc_html( $gravel ); ?>%
+
+                    </div>
+
+                    <div class="route-stat-label">
+                        Gravel
+
+                    </div>
+
+                </div>
+
+            <?php endif; ?>
 
         </div>
 

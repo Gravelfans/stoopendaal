@@ -1,37 +1,102 @@
 <?php
 /**
- * Podcast Card
+ * Route Card
  *
  * @package Stoopendaal
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$spotify = get_query_var( 'spotify' );
-$guest    = get_query_var( 'guest' );
-$duration = get_query_var( 'duration' );
-
-$recorded = get_post_meta(
-    get_the_ID(),
-    '_podcast_recorded',
-    true
+$args = wp_parse_args(
+    $args ?? array(),
+    array(
+        'distance'   => '',
+        'duration'   => '',
+        'elevation'  => '',
+        'difficulty' => '',
+        'summary'    => '',
+        'regio'      => '',
+    )
 );
 
+$distance   = $args['distance'];
+$duration   = $args['duration'];
+$elevation  = $args['elevation'];
+$difficulty = $args['difficulty'];
+$summary    = $args['summary'];
+$regio      = $args['regio'];
+
+$difficulty_type = sanitize_title( $difficulty );
 ?>
 
-<article class="podcast-card">
+<article class="route-card">
 
-    <div class="podcast-card__body">
+    <a
+        href="<?php the_permalink(); ?>"
+        class="route-card__image"
+    >
 
-        <div class="podcast-card__badge">
+        <?php if ( has_post_thumbnail() ) : ?>
 
-            <span class="podcast-dot"></span>
+            <?php
+            the_post_thumbnail(
+                'large',
+                array(
+                    'loading' => 'lazy',
+                )
+            );
+            ?>
 
-            <span>PODCAST</span>
+        <?php else : ?>
 
-        </div>
+            <img
+                src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/default-route.jpg' ); ?>"
+                alt="<?php the_title_attribute(); ?>"
+                loading="lazy"
+            >
 
-        <h3 class="podcast-card__title">
+        <?php endif; ?>
+
+        <?php
+        if ( ! empty( $difficulty ) ) {
+
+            get_template_part(
+                'template-parts/components/badge',
+                null,
+                array(
+                    'text' => $difficulty,
+                    'type' => $difficulty_type,
+                )
+            );
+
+        }
+        ?>
+
+    </a>
+
+    <div class="route-card__content">
+
+        <?php if ( ! empty( $regio ) ) : ?>
+
+            <div class="route-card__region">
+
+                <?php
+                if ( function_exists( 'stoopendaal_icon' ) ) {
+                    stoopendaal_icon( 'location' );
+                }
+                ?>
+
+                <span>
+
+                    <?php echo esc_html( $regio ); ?>
+
+                </span>
+
+            </div>
+
+        <?php endif; ?>
+
+        <h3 class="route-card__title">
 
             <a href="<?php the_permalink(); ?>">
 
@@ -41,71 +106,87 @@ $recorded = get_post_meta(
 
         </h3>
 
-        <?php if ( ! empty( $guest ) ) : ?>
+        <?php if ( ! empty( $summary ) ) : ?>
 
-            <p class="podcast-card__guest">
+            <p class="route-card__summary">
 
-                Met <?php echo esc_html( $guest ); ?>
+                <?php echo esc_html( wp_trim_words( $summary, 22 ) ); ?>
 
             </p>
 
         <?php endif; ?>
 
-        <p class="podcast-card__meta">
+        <div class="route-card__meta">
+
+            <?php if ( ! empty( $distance ) ) : ?>
+
+                <div class="route-card__stat">
+
+                    <?php
+                    if ( function_exists( 'stoopendaal_icon' ) ) {
+                        stoopendaal_icon( 'distance' );
+                    }
+                    ?>
+
+                    <span>
+
+                        <?php echo esc_html( $distance ); ?> km
+
+                    </span>
+
+                </div>
+
+            <?php endif; ?>
+
+            <?php if ( ! empty( $elevation ) ) : ?>
+
+                <div class="route-card__stat">
+
+                    <?php
+                    if ( function_exists( 'stoopendaal_icon' ) ) {
+                        stoopendaal_icon( 'elevation' );
+                    }
+                    ?>
+
+                    <span>
+
+                        <?php echo esc_html( $elevation ); ?> hm
+
+                    </span>
+
+                </div>
+
+            <?php endif; ?>
 
             <?php if ( ! empty( $duration ) ) : ?>
 
-                <span><?php echo esc_html( $duration ); ?></span>
+                <div class="route-card__stat">
 
-                <span class="divider">•</span>
+                    <span>⏱</span>
 
-            <?php endif; ?>
+                    <span>
 
-            <?php if ( ! empty( $recorded ) ) : ?>
+                        <?php echo esc_html( $duration ); ?>
 
-    <span>
+                    </span>
 
-        <?php echo esc_html( date_i18n( 'j F Y', strtotime( $recorded ) ) ); ?>
-
-    </span>
-
-<?php endif; ?>
-
-        </p>
-
-        <div class="podcast-card__excerpt">
-
-            <?php echo wp_trim_words( get_the_excerpt(), 28 ); ?>
-
-        </div>
-
-        <div class="podcast-card__footer">
-
-            <?php if ( ! empty( $spotify ) ) : ?>
-
-                <a
-                    href="<?php echo esc_url( $spotify ); ?>"
-                    class="btn btn-primary"
-                    target="_blank"
-                    rel="noopener"
-                >
-
-                    Luister op Spotify
-
-                </a>
+                </div>
 
             <?php endif; ?>
 
-            <a
-                href="<?php the_permalink(); ?>"
-                class="podcast-read-more"
-            >
-
-                Lees meer →
-
-            </a>
-
         </div>
+
+        <?php
+        get_template_part(
+            'template-parts/components/button',
+            null,
+            array(
+                'label' => 'Bekijk route',
+                'url'   => get_permalink(),
+                'style' => 'primary',
+            )
+        );
+        ?>
 
     </div>
 
