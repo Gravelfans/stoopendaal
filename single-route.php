@@ -28,8 +28,10 @@ $difficulty     = get_field( 'difficulty' );
 $province       = get_field( 'regio' );
 $start_location = get_field( 'startplaats' );
 $surface        = get_field( 'ondergrond' );
-$gpx            = get_field( 'gpx' );
-
+$gpx            = get_field( 'gpx_bestand' );
+echo '<pre>';
+print_r( $gpx );
+echo '</pre>';
 /*
 |--------------------------------------------------------------------------
 | Difficulty badge
@@ -556,33 +558,40 @@ get_template_part(
 
                 </section>
 
-                <?php if ( $gpx ) : ?>
-
+<?php if ( $gpx ) : ?>
+	
                     <section class="route-download">
 
-                        <h3>Download GPX</h3>
+    <div class="download-card__icon">
+        📥
+    </div>
 
-                        <p>
+    <h3>Download GPX</h3>
 
-                            Download gratis het GPX-bestand en navigeer direct naar de route.
+    <p>
+        Download deze route en gebruik hem op je
+        Garmin, Wahoo, Hammerhead of Bryton.
+    </p>
 
-                        </p>
+    <?php
+    get_template_part(
+        'template-parts/components/button',
+        null,
+        array(
+            'label' => 'Download GPX',
+            'url'   => $gpx['url'],
+            'style' => 'primary',
+        )
+    );
+    ?>
 
-                        <?php
+    <small>
 
-                        get_template_part(
-                            'template-parts/components/button',
-                            null,
-                            array(
-                                'label' => 'Download GPX',
-                                'url'   => $gpx['url'],
-                                'style' => 'primary',
-                            )
-                        );
+        <?php echo esc_html( $gpx['filename'] ); ?>
 
-                        ?>
+    </small>
 
-                    </section>
+</section>
 
                 <?php endif; ?>
 
