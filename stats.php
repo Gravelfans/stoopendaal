@@ -1,71 +1,69 @@
-<div class="container">
+<?php
+/**
+ * Stats Component
+ *
+ * @package Stoopendaal
+ */
 
-    <div class="about-stats-grid">
+defined( 'ABSPATH' ) || exit;
 
-        <article class="about-stat">
+$args = wp_parse_args(
+    $args ?? array(),
+    array(
+        'items' => array(),
+        'class' => '',
+    )
+);
 
-            <span class="about-stat-number">
+if ( empty( $args['items'] ) ) {
+    return;
+}
 
-                300+
+$classes = array(
+    'stats',
+);
 
-            </span>
+if ( ! empty( $args['class'] ) ) {
+    $classes[] = $args['class'];
+}
+?>
 
-            <span class="about-stat-label">
+<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 
-                Zelf gereden routes
+    <div class="container">
 
-            </span>
+        <div class="stats__grid">
 
-        </article>
+            <?php foreach ( $args['items'] as $item ) : ?>
 
-        <article class="about-stat">
+                <div class="stats__item">
 
-            <span class="about-stat-number">
+                    <?php if ( ! empty( $item['number'] ) ) : ?>
 
-                15.000+
+                        <div class="stats__number">
 
-            </span>
+                            <?php echo esc_html( $item['number'] ); ?>
 
-            <span class="about-stat-label">
+                        </div>
 
-                Gravelkilometers
+                    <?php endif; ?>
 
-            </span>
+                    <?php if ( ! empty( $item['label'] ) ) : ?>
 
-        </article>
+                        <div class="stats__label">
 
-        <article class="about-stat">
+                            <?php echo esc_html( $item['label'] ); ?>
 
-            <span class="about-stat-number">
+                        </div>
 
-                25+
+                    <?php endif; ?>
 
-            </span>
+                </div>
 
-            <span class="about-stat-label">
+            <?php endforeach; ?>
 
-                Podcastafleveringen
-
-            </span>
-
-        </article>
-
-        <article class="about-stat">
-
-            <span class="about-stat-number">
-
-                11K+
-
-            </span>
-
-            <span class="about-stat-label">
-
-                Instagram volgers
-
-            </span>
-
-        </article>
+        </div>
 
     </div>
 
-</div>
+</section>

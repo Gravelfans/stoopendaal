@@ -1,45 +1,108 @@
-<section class="about-cta">
+<?php
+/**
+ * CTA Component
+ *
+ * @package Stoopendaal
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+$args = wp_parse_args(
+    $args ?? array(),
+    array(
+        'label'         => '',
+        'title'         => '',
+        'text'          => '',
+        'button'        => '',
+        'button_url'    => '',
+        'secondary'     => '',
+        'secondary_url' => '',
+        'class'         => '',
+    )
+);
+
+$classes = array(
+    'cta',
+);
+
+if ( ! empty( $args['class'] ) ) {
+    $classes[] = $args['class'];
+}
+?>
+
+<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 
     <div class="container">
 
-        <div class="about-cta__inner">
+        <div class="cta__inner">
 
-            <span class="hero-badge">
+            <?php if ( ! empty( $args['label'] ) ) : ?>
 
-                🚴 Klaar voor jouw volgende avontuur?
+                <span class="cta__label">
 
-            </span>
+                    <?php echo esc_html( $args['label'] ); ?>
 
-            <h2>
+                </span>
 
-                Ontdek de mooiste<br>
-                gravelroutes van Nederland.
+            <?php endif; ?>
 
-            </h2>
+            <?php if ( ! empty( $args['title'] ) ) : ?>
 
-            <p>
+                <h2 class="cta__title">
 
-                Meer dan 300 zelf gereden routes, gratis GPX-downloads,
-                inspirerende podcasts en eerlijke reviews.
-                Alles om goed voorbereid op pad te gaan.
+                    <?php echo esc_html( $args['title'] ); ?>
 
-            </p>
+                </h2>
 
-            <div class="hero-buttons">
+            <?php endif; ?>
 
-                <a href="/routes/" class="btn btn-primary">
+            <?php if ( ! empty( $args['text'] ) ) : ?>
 
-                    Bekijk routes
+                <p class="cta__text">
 
-                </a>
+                    <?php echo esc_html( $args['text'] ); ?>
 
-                <a href="/samenwerken/" class="btn btn-secondary">
+                </p>
 
-                    Samenwerken
+            <?php endif; ?>
 
-                </a>
+            <?php if ( ! empty( $args['button'] ) || ! empty( $args['secondary'] ) ) : ?>
 
-            </div>
+                <div class="cta__buttons">
+
+                    <?php
+                    if ( ! empty( $args['button'] ) ) {
+
+                        get_template_part(
+                            'template-parts/components/button',
+                            null,
+                            array(
+                                'label' => $args['button'],
+                                'url'   => $args['button_url'],
+                                'style' => 'primary',
+                            )
+                        );
+
+                    }
+
+                    if ( ! empty( $args['secondary'] ) ) {
+
+                        get_template_part(
+                            'template-parts/components/button',
+                            null,
+                            array(
+                                'label' => $args['secondary'],
+                                'url'   => $args['secondary_url'],
+                                'style' => 'secondary',
+                            )
+                        );
+
+                    }
+                    ?>
+
+                </div>
+
+            <?php endif; ?>
 
         </div>
 

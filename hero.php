@@ -1,54 +1,131 @@
-<div class="about-hero__image"
-     style="background-image:url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-arjan.jpg' ); ?>');">
+<?php
+/**
+ * Hero Component
+ *
+ * @package Stoopendaal
+ */
 
-    <div class="about-hero__overlay">
+defined( 'ABSPATH' ) || exit;
 
-        <div class="container">
+$args = wp_parse_args(
+    $args ?? array(),
+    array(
+        'label'         => '',
+        'title'         => '',
+        'text'          => '',
+        'image'         => '',
+        'button'        => '',
+        'button_url'    => '',
+        'button_style'  => 'primary',
+        'secondary'     => '',
+        'secondary_url' => '',
+        'class'         => '',
+    )
+);
 
-            <div class="about-hero__content">
+$classes = array(
+    'hero',
+);
 
-                <span class="hero-badge">
+if ( ! empty( $args['class'] ) ) {
+    $classes[] = $args['class'];
+}
+?>
 
-                    👋 Over Arjan
+<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 
-                </span>
+    <div class="container">
 
-                <h1 class="about-title">
+        <div class="hero__grid">
 
-                   Ik rij voor, jij geniet.<br>                 
-Zodat jij zorgeloos op pad kunt.
+            <div class="hero__content">
 
-                </h1>
+                <?php if ( ! empty( $args['label'] ) ) : ?>
 
-                <p class="about-intro">
+                    <span class="hero__label">
 
-                    STOOPENDAAL is ontstaan vanuit een passie voor gravel,
-                    avontuur en het ontdekken van de mooiste plekken van
-                    Nederland. Meer dan 300 routes zijn persoonlijk gereden,
-                    gefotografeerd en beschreven om andere fietsers te inspireren.
+                        <?php echo esc_html( $args['label'] ); ?>
 
-                </p>
+                    </span>
 
-                <div class="hero-buttons">
+                <?php endif; ?>
 
-                    <a href="/routes/" class="btn btn-primary">
+                <?php if ( ! empty( $args['title'] ) ) : ?>
 
-                        Bekijk routes
+                    <h1 class="hero__title">
 
-                    </a>
+                        <?php echo esc_html( $args['title'] ); ?>
 
-                    <a href="/podcast/" class="btn btn-glass">
+                    </h1>
 
-                        Luister podcast
+                <?php endif; ?>
 
-                    </a>
+                <?php if ( ! empty( $args['text'] ) ) : ?>
+
+                    <p class="hero__text">
+
+                        <?php echo esc_html( $args['text'] ); ?>
+
+                    </p>
+
+                <?php endif; ?>
+
+                <?php if ( ! empty( $args['button'] ) || ! empty( $args['secondary'] ) ) : ?>
+
+                    <div class="hero__buttons">
+
+                        <?php
+                        if ( ! empty( $args['button'] ) ) {
+
+                            get_template_part(
+                                'template-parts/components/button',
+                                null,
+                                array(
+                                    'label' => $args['button'],
+                                    'url'   => $args['button_url'],
+                                    'style' => $args['button_style'],
+                                )
+                            );
+
+                        }
+
+                        if ( ! empty( $args['secondary'] ) ) {
+
+                            get_template_part(
+                                'template-parts/components/button',
+                                null,
+                                array(
+                                    'label' => $args['secondary'],
+                                    'url'   => $args['secondary_url'],
+                                    'style' => 'secondary',
+                                )
+                            );
+
+                        }
+                        ?>
+
+                    </div>
+
+                <?php endif; ?>
+
+            </div>
+
+            <?php if ( ! empty( $args['image'] ) ) : ?>
+
+                <div class="hero__image">
+
+                    <img
+                        src="<?php echo esc_url( $args['image'] ); ?>"
+                        alt=""
+                        loading="eager"
+                    >
 
                 </div>
 
-            </div>
+            <?php endif; ?>
 
         </div>
 
     </div>
 
-</div>
+</section>
