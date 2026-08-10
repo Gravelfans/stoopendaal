@@ -1287,3 +1287,31 @@
 .home-routes .route-card__content {
     flex: none;
 }
+/* KAARTJE CENTREREN */
+.contact-area__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.contact-area__content {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.contact-area__image {
+    width: 760px !important;
+    max-width: calc(100% - 30px) !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+}
+
+.contact-area__image img {
+    width: 100% !important;
+    display: block !important;
+}
