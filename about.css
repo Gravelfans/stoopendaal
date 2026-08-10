@@ -1,0 +1,784 @@
+/* =====================================================
+   STOOPENDAAL.NL
+   ABOUT.CSS V2
+===================================================== */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.about-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.about-hero__image{
+
+    position:relative;
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background-size:cover;
+
+    background-position:65% center;
+
+    background-repeat:no-repeat;
+
+}
+
+.about-hero__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(11,20,17,.82) 0%,
+        rgba(11,20,17,.58) 45%,
+        rgba(11,20,17,.15) 100%
+    );
+
+}
+
+.about-hero .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.about-hero__content{
+
+    max-width:760px;
+
+    padding:180px 0 140px;
+
+}
+
+.about-title{
+
+    margin:30px 0;
+
+    font-size:clamp(3.8rem,6vw,5.8rem);
+
+    line-height:.95;
+
+    color:#fff;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
+
+}
+
+.about-intro{
+
+    max-width:640px;
+
+    font-size:1.35rem;
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,.92);
+
+    margin-bottom:45px;
+
+}
+
+.about-hero .hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* =====================================================
+   STORY
+===================================================== */
+
+.about-story{
+
+    padding:140px 0;
+
+}
+
+.about-story-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+.about-story-image{
+
+    position:relative;
+
+}
+
+.about-story-image img{
+
+    width:100%;
+
+    border-radius:32px;
+
+    display:block;
+
+    box-shadow:
+
+        0 35px 80px rgba(0,0,0,.16);
+
+}
+
+.about-story-content{
+
+    max-width:620px;
+
+}
+
+.about-story-content h2{
+
+    margin:25px 0 35px;
+
+    font-size:clamp(2.6rem,4vw,4rem);
+
+    line-height:1.05;
+
+}
+
+.about-story-content p{
+
+    margin-bottom:28px;
+
+    font-size:1.15rem;
+
+    line-height:1.95;
+
+    color:#566277;
+
+}
+
+.about-story-content .btn{
+
+    margin-top:20px;
+
+}/* =====================================================
+   STATS
+===================================================== */
+
+.about-stats{
+
+    padding:40px 0 140px;
+
+}
+
+.about-stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.about-stat{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:50px 35px;
+
+    text-align:center;
+
+    box-shadow:
+
+        0 18px 45px rgba(15,23,42,.08);
+
+    transition:.35s ease;
+
+}
+
+.about-stat:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+        0 35px 70px rgba(15,23,42,.14);
+
+}
+
+.about-stat-number{
+
+    display:block;
+
+    font-size:3.6rem;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+    line-height:1;
+
+    margin-bottom:14px;
+
+}
+
+.about-stat-label{
+
+    display:block;
+
+    font-size:1rem;
+
+    color:#687588;
+
+    font-weight:600;
+
+}
+
+
+
+/* =====================================================
+   MISSION
+===================================================== */
+
+.about-mission{
+
+    padding:140px 0;
+
+    text-align:center;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.about-mission h2{
+
+    margin:25px 0 35px;
+
+    font-size:clamp(2.8rem,4vw,4.4rem);
+
+    line-height:1.05;
+
+}
+
+.about-mission p{
+
+    margin-bottom:28px;
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    color:#5D697B;
+
+}
+
+.about-quote{
+
+    margin-top:70px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    background:#F7F8F6;
+
+    border-left:6px solid var(--secondary);
+
+    font-size:1.5rem;
+
+    font-style:italic;
+
+    color:var(--text);
+
+    box-shadow:
+
+        0 18px 40px rgba(15,23,42,.06);
+
+}
+
+
+
+/* =====================================================
+   GEAR
+===================================================== */
+
+.about-gear{
+
+    padding:140px 0;
+
+}
+
+.about-gear-header{
+
+    max-width:760px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+.about-gear-header h2{
+
+    margin:22px 0 28px;
+
+    font-size:clamp(2.6rem,4vw,4rem);
+
+}
+
+.about-gear-header p{
+
+    font-size:1.15rem;
+
+    color:#687588;
+
+    line-height:1.9;
+
+}
+
+.about-gear-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:32px;
+
+}
+
+.gear-card{
+
+    background:#fff;
+
+    padding:45px 35px;
+
+    border-radius:28px;
+
+    box-shadow:
+
+        0 18px 45px rgba(15,23,42,.08);
+
+    transition:.35s ease;
+
+}
+
+.gear-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+        0 35px 70px rgba(15,23,42,.14);
+
+}
+
+.gear-icon{
+
+    width:72px;
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:2rem;
+
+    border-radius:22px;
+
+    background:#EEF6ED;
+
+    margin-bottom:30px;
+
+}
+
+.gear-card h3{
+
+    margin-bottom:18px;
+
+    font-size:1.45rem;
+
+}
+
+.gear-card p{
+
+    color:#667387;
+
+    line-height:1.9;
+
+}/* =====================================================
+   TIMELINE
+===================================================== */
+
+.about-timeline{
+
+    padding:140px 0;
+
+}
+
+.about-timeline-header{
+
+    max-width:760px;
+
+    margin:0 auto 90px;
+
+    text-align:center;
+
+}
+
+.about-timeline-header h2{
+
+    margin:24px 0 30px;
+
+    font-size:clamp(2.6rem,4vw,4rem);
+
+}
+
+.about-timeline-header p{
+
+    color:#667387;
+
+    line-height:1.9;
+
+}
+
+.about-timeline{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    position:relative;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:40px;
+
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
+
+    transition:.35s ease;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 35px 70px rgba(15,23,42,.14);
+
+}
+
+.timeline-year{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:700;
+
+    margin-bottom:24px;
+
+}
+
+.timeline-content h3{
+
+    margin-bottom:16px;
+
+    font-size:1.4rem;
+
+}
+
+.timeline-content p{
+
+    color:#667387;
+
+    line-height:1.9;
+
+}
+
+
+/* =====================================================
+   FAVORITE ROUTES
+===================================================== */
+
+.about-favorites{
+
+    padding:140px 0;
+
+}
+
+.about-favorites-header{
+
+    max-width:760px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+.about-favorites-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+}
+
+.favorite-card{
+
+    background:#fff;
+
+    padding:42px;
+
+    border-radius:28px;
+
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
+
+    transition:.35s ease;
+
+}
+
+.favorite-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 35px 70px rgba(15,23,42,.14);
+
+}
+
+.favorite-location{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:#EEF6ED;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+}
+
+.favorite-card h3{
+
+    margin-bottom:18px;
+
+    font-size:1.6rem;
+
+}
+
+.favorite-card p{
+
+    color:#667387;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+
+}
+
+.favorite-link{
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+
+
+/* =====================================================
+   PODCAST
+===================================================== */
+
+.about-podcast{
+
+    display:grid;
+
+    grid-template-columns:1.1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+    padding:140px 0;
+
+}
+
+.about-podcast__image img{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    display:block;
+
+    box-shadow:0 30px 70px rgba(15,23,42,.12);
+
+}
+
+.about-podcast__content{
+
+    max-width:600px;
+
+}
+
+.about-podcast__content h2{
+
+    margin:22px 0 30px;
+
+    font-size:clamp(2.6rem,4vw,4rem);
+
+}
+
+.about-podcast__content p{
+
+    color:#667387;
+
+    line-height:1.9;
+
+    margin-bottom:24px;
+
+}
+
+.about-podcast .hero-buttons{
+
+    margin-top:40px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1024px){
+
+    .about-story-grid,
+    .about-podcast{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+    .about-stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .about-gear-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .about-favorites-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-timeline{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .about-title{
+
+        font-size:3rem;
+
+    }
+
+    .about-story,
+    .about-mission,
+    .about-gear,
+    .about-favorites,
+    .about-podcast{
+
+        padding:90px 0;
+
+    }
+
+    .about-stats-grid,
+    .about-gear-grid,
+    .about-timeline{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-podcast__image img{
+
+        height:360px;
+
+    }
+
+}

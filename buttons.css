@@ -1,0 +1,163 @@
+/* ==========================================================
+   BUTTONS
+   STOOPENDAAL V2
+========================================================== */
+
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    min-height:56px;
+    padding:0 28px;
+
+    border:2px solid transparent;
+    border-radius:999px;
+
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    line-height:1;
+
+    text-decoration:none;
+    cursor:pointer;
+
+    transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+
+    white-space:nowrap;
+}
+
+/* ==========================================================
+   PRIMARY
+========================================================== */
+
+.btn--primary{
+
+    background:var(--primary);
+    border-color:var(--primary);
+    color:#fff;
+
+    box-shadow:
+        0 12px 30px rgba(92,116,80,.22);
+
+}
+
+.btn--primary:hover{
+
+    background:var(--primary-dark);
+    border-color:var(--primary-dark);
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   SECONDARY
+========================================================== */
+
+.btn--secondary{
+
+    background:#fff;
+
+    color:var(--primary);
+
+    border-color:var(--primary);
+
+}
+
+.btn--secondary:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   ACCENT
+========================================================== */
+
+.btn--accent{
+
+    background:var(--accent);
+
+    border-color:var(--accent);
+
+    color:#fff;
+
+}
+
+.btn--accent:hover{
+
+    filter:brightness(.95);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   LABEL
+========================================================== */
+
+.btn__label{
+
+    display:block;
+
+}
+
+/* ==========================================================
+   ARROW
+========================================================== */
+
+.btn__arrow{
+
+    font-size:18px;
+
+    line-height:1;
+
+    transition:transform .25s ease;
+
+}
+
+.btn:hover .btn__arrow{
+
+    transform:translateX(4px);
+
+}
+
+/* ==========================================================
+   FOCUS
+========================================================== */
+
+.btn:focus-visible{
+
+    outline:3px solid rgba(92,116,80,.30);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .btn{
+
+        width:100%;
+
+        min-height:54px;
+
+    }
+
+}

@@ -1,0 +1,943 @@
+/* ==========================================================
+   SINGLE ROUTE
+   STOOPENDAAL V4
+========================================================== */
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.route-hero{
+
+    position:relative;
+
+    min-height:720px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#14231E;
+
+    color:#fff;
+
+}
+
+
+.route-hero__image{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+}
+
+
+.route-hero__image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.route-hero__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.20) 0%,
+            rgba(0,0,0,.55) 45%,
+            rgba(0,0,0,.82) 100%
+        );
+
+}
+
+
+.route-hero .container{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.route-hero__content{
+
+    max-width:760px;
+
+    padding:140px 0 110px;
+
+}
+
+
+.route-hero__title{
+
+    margin:24px 0;
+
+    font-size:clamp(3rem,6vw,5.5rem);
+
+    line-height:1.05;
+
+    color:#fff;
+
+}
+
+
+.route-hero__intro{
+
+    font-size:1.2rem;
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,.92);
+
+    max-width:700px;
+
+}
+
+
+
+/* ==========================================================
+   HERO STATS
+========================================================== */
+
+.route-hero__stats{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:40px;
+
+    margin-bottom:42px;
+
+}
+
+
+.route-hero__stat{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 20px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    color:#fff;
+
+    font-weight:600;
+
+}
+
+
+.route-hero__stat svg{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
+.route-hero__buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:10px;
+
+}
+
+
+
+/* ==========================================================
+   ROUTE STATS
+========================================================== */
+
+.stats{
+
+    padding:90px 0;
+
+    background:#F8F9F7;
+
+}
+
+
+.stats__grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+}
+
+
+.stats__item{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:42px;
+
+    text-align:center;
+
+    transition:.35s ease;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+}
+
+
+.stats__item:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.10);
+
+}
+
+
+.stats__number{
+
+    font-size:2.7rem;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+    line-height:1;
+
+}
+
+
+.stats__label{
+
+    color:var(--muted);
+
+    font-size:.95rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+}/* ==========================================================
+   ROUTE LAYOUT
+========================================================== */
+
+.route-content{
+
+    padding:100px 0;
+
+    background:#fff;
+
+}
+
+.route-layout{
+
+    display:grid;
+
+    grid-template-columns:minmax(0,2fr) 380px;
+
+    gap:50px;
+
+    align-items:start;
+
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.route-main{
+
+    min-width:0;
+
+}
+
+.route-section{
+
+    margin-bottom:80px;
+
+}
+
+.route-section:last-child{
+
+    margin-bottom:0;
+
+}
+
+.route-section h2{
+
+    margin:0 0 30px;
+
+    font-size:2rem;
+
+    color:var(--text);
+
+    line-height:1.2;
+
+}
+
+.route-section p{
+
+    margin-bottom:24px;
+
+    line-height:1.9;
+
+    color:var(--muted);
+
+}
+
+.route-section ul{
+
+    margin:0 0 30px 20px;
+
+}
+
+.route-section li{
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.route-sidebar{
+
+    position:sticky;
+
+    top:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+
+/* ==========================================================
+   INFO CARD
+========================================================== */
+
+.route-info{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:34px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+}
+
+.route-info h3{
+
+    margin:0 0 24px;
+
+    font-size:1.35rem;
+
+}
+
+.route-info ul{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.route-info li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+
+}
+
+.route-info li:last-child{
+
+    border-bottom:none;
+
+}
+
+.route-info strong{
+
+    color:var(--text);
+
+    font-weight:700;
+
+}
+
+.route-info span{
+
+    color:var(--muted);
+
+    text-align:right;
+
+}
+
+
+/* ==========================================================
+   DOWNLOAD BOX
+========================================================== */
+
+.route-download{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    color:#fff;
+
+    border-radius:24px;
+
+    padding:36px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.16);
+
+}
+
+.route-download h3{
+
+    color:#fff;
+
+    margin:0 0 16px;
+
+}
+
+.route-download p{
+
+    color:rgba(255,255,255,.88);
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+
+/* ==========================================================
+   MAP
+========================================================== */
+
+.route-map{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+}
+
+.route-map h3{
+
+    margin:0 0 24px;
+
+}
+
+.route-map iframe{
+
+    width:100%;
+
+    min-height:420px;
+
+    border:none;
+
+    border-radius:18px;
+
+}
+
+.route-map img{
+
+    width:100%;
+
+    border-radius:18px;
+
+}
+
+
+/* ==========================================================
+   GALLERY
+========================================================== */
+
+.route-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.route-gallery__item{
+
+    display:block;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+}
+
+.route-gallery__item img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    transition:transform .45s ease;
+
+}
+
+.route-gallery__item:hover img{
+
+    transform:scale(1.05);
+
+}/* ==========================================================
+   RELATED ROUTES
+========================================================== */
+
+.related-routes{
+
+    padding:110px 0;
+
+    background:#F8F9F7;
+
+}
+
+.related-routes .routes-grid{
+
+    margin-top:60px;
+
+}
+
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.single-route .cta{
+
+    padding-top:0;
+
+}
+
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+.route-section,
+.route-info,
+.route-download,
+.route-map,
+.route-gallery__item,
+.stats__item{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.route-info:hover,
+.route-download:hover,
+.route-map:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.10);
+
+}
+
+
+
+/* ==========================================================
+   IMAGE EFFECTS
+========================================================== */
+
+.route-gallery__item{
+
+    position:relative;
+
+}
+
+.route-gallery__item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.15),
+        transparent
+    );
+
+    opacity:0;
+
+    transition:.35s ease;
+
+}
+
+.route-gallery__item:hover::after{
+
+    opacity:1;
+
+}
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    .route-hero{
+
+        min-height:620px;
+
+    }
+
+    .route-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .route-sidebar{
+
+        position:relative;
+
+        top:auto;
+
+    }
+
+    .stats__grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .route-gallery{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .route-hero{
+
+        min-height:auto;
+
+    }
+
+    .route-hero__content{
+
+        padding:120px 0 70px;
+
+    }
+
+    .route-hero__title{
+
+        font-size:2.6rem;
+
+    }
+
+    .route-hero__intro{
+
+        font-size:1rem;
+
+    }
+
+    .route-hero__stats{
+
+        gap:12px;
+
+    }
+
+    .route-hero__stat{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .route-hero__buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .route-content{
+
+        padding:70px 0;
+
+    }
+
+    .route-section{
+
+        margin-bottom:60px;
+
+    }
+
+    .route-gallery{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .route-gallery__item img{
+
+        height:240px;
+
+    }
+
+    .route-info,
+    .route-download,
+    .route-map{
+
+        padding:28px;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:576px){
+
+    .stats__grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .route-hero__title{
+
+        font-size:2.2rem;
+
+    }
+
+    .route-hero__content{
+
+        padding:100px 0 60px;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.route-gallery__item:focus-visible,
+.route-hero__buttons a:focus-visible{
+
+    outline:3px solid var(--primary);
+
+    outline-offset:4px;
+
+}
+
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        transition:none !important;
+
+        animation:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    .route-hero__buttons,
+    .cta,
+    .related-routes,
+    header,
+    footer{
+
+        display:none;
+
+    }
+
+    .route-content{
+
+        padding:0;
+
+    }
+
+}/* ==========================================
+   DOWNLOAD CARD
+========================================== */
+
+.download-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:32px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    text-align:center;
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.download-card__icon{
+
+    width:72px;
+    height:72px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:#F4F8F2;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+
+}
+
+.download-card__title{
+
+    margin-bottom:12px;
+
+}
+
+.download-card__text{
+
+    color:var(--muted);
+
+    margin-bottom:24px;
+
+}
+
+.download-card__filename{
+
+    margin-top:18px;
+
+    font-size:.85rem;
+
+    color:#8A8A8A;
+
+    word-break:break-word;
+
+}

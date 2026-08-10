@@ -1,0 +1,684 @@
+/* =====================================================
+   STOOPENDAAL.NL
+   HEADER V2
+===================================================== */
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    padding:22px 0;
+
+    background:transparent;
+
+    transition:
+        background .35s ease,
+        padding .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.site-header.scrolled{
+
+    padding:12px 0;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+
+}
+
+
+/* =====================================================
+   INNER
+===================================================== */
+
+.header-inner{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:60px;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.site-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.custom-logo-link{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.custom-logo{
+
+    display:block;
+
+    width:auto;
+
+    height:90px;
+
+    transition:all .35s ease;
+
+}
+
+.site-header.scrolled .custom-logo{
+
+    height:72px;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.main-navigation{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.main-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+.main-menu li{
+
+    position:relative;
+
+}
+
+.main-menu a{
+
+    position:relative;
+
+    display:block;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    text-transform:uppercase;
+
+    font-size:.92rem;
+
+    font-weight:700;
+
+    letter-spacing:.07em;
+
+    transition:all .30s ease;
+
+}
+
+
+/* Scroll */
+
+.site-header.scrolled .main-menu a{
+
+    color:#183126;
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.main-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-10px;
+
+    transform:translateX(-50%);
+
+    width:0;
+
+    height:3px;
+
+    border-radius:20px;
+
+    background:#C89B3C;
+
+    transition:.30s ease;
+
+}
+
+.main-menu a:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.main-menu a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   ACTIVE
+===================================================== */
+
+.current-menu-item>a{
+
+    color:#C89B3C !important;
+
+}
+
+.current-menu-item>a::after{
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   HEADER ACTIONS
+===================================================== */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+/* =====================================================
+   DOWNLOAD BUTTON
+===================================================== */
+
+.header-download{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 32px;
+
+    border-radius:999px;
+
+    background:#B64632;
+
+    color:#fff;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    box-shadow:
+
+        0 15px 35px rgba(182,70,50,.28);
+
+    transition:.30s ease;
+
+}
+
+.header-download:hover{
+
+    transform:translateY(-3px);
+
+    background:#9F3B2A;
+
+    color:#fff;
+
+    box-shadow:
+
+        0 22px 45px rgba(182,70,50,.38);
+
+}
+
+
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    width:54px;
+
+    height:54px;
+
+    padding:0;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    cursor:pointer;
+
+    transition:.30s ease;
+
+}
+
+.site-header.scrolled .menu-toggle{
+
+    background:#F4F5F3;
+
+}
+
+.menu-toggle:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.menu-toggle span{
+
+    display:block;
+
+    width:24px;
+
+    height:3px;
+
+    margin:5px auto;
+
+    border-radius:20px;
+
+    background:#ffffff;
+
+    transition:.30s ease;
+
+}
+
+.site-header.scrolled .menu-toggle span{
+
+    background:#183126;
+
+}/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(6px);
+
+    -webkit-backdrop-filter:blur(6px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s ease;
+
+    z-index:9997;
+
+}
+
+.mobile-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/* =====================================================
+   OFF CANVAS
+===================================================== */
+
+.mobile-nav{
+
+    position:fixed;
+
+    top:0;
+
+    right:-100%;
+
+    width:360px;
+
+    max-width:92%;
+
+    height:100vh;
+
+    padding:120px 40px 50px;
+
+    background:#183126;
+
+    overflow-y:auto;
+
+    transition:.40s ease;
+
+    z-index:9998;
+
+    box-shadow:
+
+        -20px 0 60px rgba(0,0,0,.30);
+
+}
+
+.mobile-nav.active{
+
+    right:0;
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-menu{
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+.mobile-menu li{
+
+    margin-bottom:26px;
+
+}
+
+.mobile-menu a{
+
+    display:inline-block;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    text-transform:uppercase;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    letter-spacing:.06em;
+
+    transition:.30s ease;
+
+}
+
+.mobile-menu a:hover{
+
+    color:#C89B3C;
+
+    transform:translateX(8px);
+
+}
+
+.mobile-menu .current-menu-item>a{
+
+    color:#C89B3C;
+
+}
+
+
+/* =====================================================
+   MOBILE BUTTON
+===================================================== */
+
+.mobile-nav__buttons{
+
+    margin-top:50px;
+
+}
+
+.mobile-nav__buttons .button-primary{
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   MOBILE FOOTER
+===================================================== */
+
+.mobile-nav::after{
+
+    content:"STOOPENDAAL • GRAVELROADS";
+
+    display:block;
+
+    margin-top:60px;
+
+    padding-top:30px;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    color:rgba(255,255,255,.45);
+
+    font-size:.80rem;
+
+    letter-spacing:.18em;
+
+}
+
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.menu-toggle.active span:nth-child(1){
+
+    transform:
+
+        translateY(8px)
+
+        rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+    transform:
+
+        translateY(-8px)
+
+        rotate(-45deg);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1100px){
+
+    .main-navigation{
+
+        display:none;
+
+    }
+
+    .header-download{
+
+        display:none;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .site-header{
+
+        padding:16px 0;
+
+    }
+
+    .custom-logo{
+
+        height:68px;
+
+    }
+
+    .site-header.scrolled .custom-logo{
+
+        height:58px;
+
+    }
+
+    .mobile-nav{
+
+        width:320px;
+
+        padding:110px 32px 40px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .custom-logo{
+
+        height:60px;
+
+    }
+
+    .mobile-nav{
+
+        width:100%;
+
+        max-width:100%;
+
+        padding:100px 28px 35px;
+
+    }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.menu-toggle:focus-visible,
+
+.mobile-menu a:focus-visible,
+
+.header-download:focus-visible{
+
+    outline:3px solid #C89B3C;
+
+    outline-offset:4px;
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .site-header,
+
+    .menu-toggle,
+
+    .mobile-nav,
+
+    .mobile-overlay,
+
+    .main-menu a,
+
+    .header-download{
+
+        transition:none !important;
+
+    }
+
+}

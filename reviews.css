@@ -1,0 +1,142 @@
+/* =====================================================
+   STOOPENDAAL.NL
+   REVIEWS.CSS
+===================================================== */
+
+.reviews{
+
+    padding:140px 0;
+
+    background:#F8F7F2;
+
+}
+
+.reviews-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+/* kaart */
+
+.review-card{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:38px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 35px 70px rgba(0,0,0,.12);
+
+}
+
+/* sterren */
+
+.review-stars{
+
+    color:#F3B323;
+
+    font-size:22px;
+
+    margin-bottom:25px;
+
+}
+
+/* tekst */
+
+.review-text{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+    font-size:17px;
+
+}
+
+/* auteur */
+
+.review-author{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.review-author img{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.review-author strong{
+
+    display:block;
+
+    color:var(--dark);
+
+}
+
+.review-author span{
+
+    color:var(--muted);
+
+    font-size:15px;
+
+}
+
+/* responsive */
+
+@media(max-width:1100px){
+
+    .reviews-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .reviews{
+
+        padding:100px 0;
+
+    }
+
+    .reviews-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

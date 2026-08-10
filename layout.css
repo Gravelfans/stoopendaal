@@ -1,0 +1,284 @@
+/* =====================================================
+   STOOPENDAAL.NL
+   LAYOUT.CSS
+   -----------------------------------------------------
+   Container
+   Sections
+   Section Titles
+   Grid
+   Utilities
+===================================================== */
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    width:min(var(--container),92%);
+
+    margin-inline:auto;
+
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section{
+
+    position:relative;
+
+    padding:120px 0;
+
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+
+    max-width:760px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+.section-title span{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.section-title h2{
+
+    margin-bottom:20px;
+
+}
+
+.section-title p{
+
+    max-width:680px;
+
+    margin:auto;
+
+    font-size:20px;
+
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.grid{
+
+    display:grid;
+
+    gap:32px;
+
+}
+
+
+/* =====================================================
+   FLEX HELPERS
+===================================================== */
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+/* =====================================================
+   SPACING UTILITIES
+===================================================== */
+
+.mt-1{margin-top:10px;}
+.mt-2{margin-top:20px;}
+.mt-3{margin-top:40px;}
+.mt-4{margin-top:60px;}
+
+.mb-1{margin-bottom:10px;}
+.mb-2{margin-bottom:20px;}
+.mb-3{margin-bottom:40px;}
+.mb-4{margin-bottom:60px;}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+
+/* =====================================================
+   WIDTHS
+===================================================== */
+
+.w-100{
+
+    width:100%;
+
+}
+
+.max-600{
+
+    max-width:600px;
+
+}
+
+.max-800{
+
+    max-width:800px;
+
+}
+
+
+/* =====================================================
+   RADIUS
+===================================================== */
+
+.rounded{
+
+    border-radius:var(--radius);
+
+}
+
+
+/* =====================================================
+   SHADOWS
+===================================================== */
+
+.shadow{
+
+    box-shadow:var(--shadow-small);
+
+}
+
+.shadow-lg{
+
+    box-shadow:var(--shadow-large);
+
+}
+
+
+/* =====================================================
+   BACKGROUNDS
+===================================================== */
+
+.bg-white{
+
+    background:var(--surface);
+
+}
+
+.bg-light{
+
+    background:var(--background);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:100px 0;
+
+    }
+
+    .section-title{
+
+        margin-bottom:60px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    section{
+
+        padding:80px 0;
+
+    }
+
+    .section-title h2{
+
+        font-size:clamp(34px,6vw,44px);
+
+    }
+
+    .section-title p{
+
+        font-size:18px;
+
+    }
+
+}

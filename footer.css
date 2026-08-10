@@ -1,0 +1,291 @@
+/* =====================================================
+   FOOTER
+   STOOPENDAAL
+===================================================== */
+
+.site-footer{
+
+    background:#101712;
+
+    color:#ffffff;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    margin-top:120px;
+
+}
+
+.site-footer a{
+
+    color:rgba(255,255,255,.82);
+
+    text-decoration:none;
+
+    transition:.25s ease;
+
+}
+
+.site-footer a:hover{
+
+    color:#ffffff;
+
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:70px;
+
+    padding:90px 0;
+
+}
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.footer-brand img{
+
+    max-width:110px;
+
+    height:auto;
+
+    margin-bottom:28px;
+
+}
+
+.footer-brand p{
+
+    max-width:420px;
+
+    color:rgba(255,255,255,.72);
+
+    line-height:1.8;
+
+    margin-bottom:32px;
+
+}
+
+/* =====================================================
+   SOCIALS
+===================================================== */
+
+.footer-social{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+}
+
+.footer-social a{
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-social a:hover{
+
+    background:#2E7D32;
+
+    border-color:#2E7D32;
+
+}
+
+/* =====================================================
+   KOLOMMEN
+===================================================== */
+
+.footer-links h4,
+.footer-stats h4{
+
+    margin:0 0 24px;
+
+    color:#ffffff;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+}
+
+.footer-links ul,
+.footer-stats ul{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.footer-links li,
+.footer-stats li{
+
+    margin-bottom:16px;
+
+}
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.footer-menu{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.footer-menu li{
+
+    margin-bottom:16px;
+
+}
+
+.footer-menu a{
+
+    color:rgba(255,255,255,.75);
+
+}
+
+.footer-menu a:hover{
+
+    color:#ffffff;
+
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.footer-stats strong{
+
+    display:inline-block;
+
+    width:70px;
+
+    color:#57b35b;
+
+    font-weight:800;
+
+}
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-bottom-inner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:28px 0;
+
+}
+
+.footer-bottom p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.55);
+
+}
+
+.footer-legal{
+
+    display:flex;
+
+    gap:24px;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:992px){
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:50px;
+
+    }
+
+}
+
+@media (max-width:640px){
+
+    .site-footer{
+
+        margin-top:80px;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+        padding:60px 0;
+
+    }
+
+    .footer-bottom-inner{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:16px;
+
+    }
+
+    .footer-legal{
+
+        flex-wrap:wrap;
+
+        gap:16px;
+
+    }
+
+    .footer-brand img{
+
+        max-width:90px;
+
+    }
+
+}

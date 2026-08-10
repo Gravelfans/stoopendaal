@@ -1,0 +1,296 @@
+/* =====================================================
+   STOOPENDAAL.NL
+   BASE.CSS
+   -----------------------------------------------------
+   Reset
+   Variables
+   Base
+   Typography
+   Links
+   Images
+   Scrollbar
+   Selection
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =====================================================
+   ROOT VARIABLES
+===================================================== */
+
+:root{
+
+    /* Brand */
+
+    --primary:#5C7450;
+    --primary-dark:#46593D;
+
+    --secondary:#A53D2F;
+
+    --accent:#C79A3B;
+
+    /* Neutrals */
+
+    --background:#F6F6F2;
+
+    --surface:#FFFFFF;
+
+    --text:#17263A;
+
+    --muted:#6F7784;
+
+    --white:#FFFFFF;
+
+    /* Layout */
+
+    --container:1400px;
+
+    --radius:24px;
+
+    /* Effects */
+
+    --transition:.35s cubic-bezier(.2,.8,.2,1);
+
+    --shadow-small:
+        0 12px 30px rgba(0,0,0,.08);
+
+    --shadow-large:
+        0 30px 80px rgba(0,0,0,.15);
+
+}
+
+
+/* =====================================================
+   HTML
+===================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    color:var(--text);
+
+    background:var(--background);
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:'Manrope',sans-serif;
+
+    font-weight:800;
+
+    color:var(--text);
+
+}
+
+h1{
+
+    font-size:clamp(58px,7vw,88px);
+
+    line-height:1.02;
+
+    letter-spacing:-2px;
+
+}
+
+h2{
+
+    font-size:clamp(40px,5vw,62px);
+
+    line-height:1.08;
+
+}
+
+h3{
+
+    font-size:30px;
+
+}
+
+h4{
+
+    font-size:24px;
+
+}
+
+p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+
+/* =====================================================
+   LISTS
+===================================================== */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button{
+
+    font:inherit;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   FORM ELEMENTS
+===================================================== */
+
+input,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ECECEC;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+a:focus-visible,
+button:focus-visible{
+
+    outline:3px solid rgba(92,116,80,.35);
+
+    outline-offset:4px;
+
+}

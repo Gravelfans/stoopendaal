@@ -1,0 +1,440 @@
+/* =====================================================
+   STOOPENDAAL.NL
+   HEADER.CSS
+===================================================== */
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    padding:18px 0;
+
+    background:transparent;
+
+    transition:all .35s ease;
+
+}
+
+.site-header.scrolled{
+
+    padding:12px 0;
+
+    background:rgba(17,23,18,.88);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:0 12px 40px rgba(0,0,0,.18);
+
+}
+
+
+/* =====================================================
+   INNER
+===================================================== */
+
+.header-inner{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:50px;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.site-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.custom-logo-link{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.custom-logo{
+
+    display:block;
+
+    height:80px;
+
+    width:auto;
+
+    transition:all .35s ease;
+
+}
+
+.site-header.scrolled .custom-logo{
+
+    height:64px;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.main-navigation{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.main-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:38px;
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+.main-menu li{
+
+    position:relative;
+
+}
+
+.main-menu a{
+
+    position:relative;
+
+    display:block;
+
+    color:#fff;
+
+    text-transform:uppercase;
+
+    font-size:.92rem;
+
+    font-weight:700;
+
+    letter-spacing:.06em;
+
+    transition:all .3s ease;
+
+}
+
+.main-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--accent);
+
+    transition:width .3s ease;
+
+}
+
+.main-menu a:hover{
+
+    color:#fff;
+
+}
+
+.main-menu a:hover::after{
+
+    width:100%;
+
+}
+
+.current-menu-item > a{
+
+    color:var(--accent);
+
+}
+
+.current-menu-item > a::after{
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   HEADER ACTIONS
+===================================================== */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+/* =====================================================
+   CTA BUTTON
+===================================================== */
+
+.button-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:var(--secondary);
+
+    color:#fff;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:all .3s ease;
+
+}
+
+.button-primary:hover{
+
+    background:var(--accent);
+
+    color:var(--text);
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.12);
+
+    cursor:pointer;
+
+}
+
+.menu-toggle span{
+
+    display:block;
+
+    width:24px;
+
+    height:3px;
+
+    margin:5px auto;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    transition:all .3s ease;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:992px){
+
+    .main-navigation{
+
+        display:none;
+
+    }
+
+    .button-primary{
+
+        display:none;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .custom-logo{
+
+        height:64px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .site-header{
+
+        padding:18px 0;
+
+    }
+
+    .custom-logo{
+
+        height:56px;
+
+    }
+
+}/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s ease;
+
+    z-index:9997;
+
+}
+
+.mobile-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.mobile-nav{
+
+    position:fixed;
+
+    top:0;
+
+    right:-100%;
+
+    width:320px;
+
+    max-width:90%;
+
+    height:100vh;
+
+    background:#183126;
+
+    padding:120px 40px 40px;
+
+    transition:.35s ease;
+
+    z-index:9998;
+
+    overflow-y:auto;
+
+}
+
+.mobile-nav.active{
+
+    right:0;
+
+}
+
+.mobile-menu{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.mobile-menu li{
+
+    margin-bottom:24px;
+
+}
+
+.mobile-menu a{
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+
+.mobile-nav__buttons{
+
+    margin-top:40px;
+
+}
