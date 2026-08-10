@@ -1160,4 +1160,85 @@
 
     }
 
+}/* ==========================================================
+   WERKGEBIED - KAART ECHT CENTREREN
+========================================================== */
+
+/* De bestaande 2-koloms layout uitschakelen */
+.contact-area__grid {
+    display: block !important;
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto !important;
+}
+
+/* Tekst bovenaan */
+.contact-area__content {
+    width: 100% !important;
+    max-width: 760px;
+    margin: 0 auto 45px !important;
+    text-align: center;
+}
+
+/* KAART */
+.contact-area__image {
+    display: block !important;
+
+    width: 760px !important;
+    max-width: calc(100vw - 60px) !important;
+
+    margin: 0 auto !important;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+}
+
+/* Afbeelding zelf */
+.contact-area__image img {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: auto;
+
+    margin: 0 auto !important;
+
+    border-radius: 20px;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .contact-area__grid {
+        width: 100% !important;
+    }
+
+    .contact-area__content {
+        margin-bottom: 35px !important;
+    }
+
+    .contact-area__image {
+        width: calc(100vw - 30px) !important;
+        max-width: calc(100vw - 30px) !important;
+        padding: 10px;
+        border-radius: 22px;
+    }
+
 }
