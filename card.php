@@ -1,121 +1,111 @@
 <?php
 /**
- * Card Component
+ * Podcast Card
  *
  * @package Stoopendaal
  */
 
 defined( 'ABSPATH' ) || exit;
 
-$args = wp_parse_args(
-    $args ?? array(),
-    array(
-        'image'  => '',
-        'badge'  => '',
-        'type'   => 'primary',
-        'title'  => '',
-        'text'   => '',
-        'meta'   => '',
-        'url'    => '',
-        'button' => '',
-        'class'  => '',
-    )
+$spotify = get_query_var( 'spotify' );
+$guest    = get_query_var( 'guest' );
+$duration = get_query_var( 'duration' );
+
+$recorded = get_post_meta(
+    get_the_ID(),
+    '_podcast_recorded',
+    true
 );
 
-$classes = array(
-    'card',
-);
-
-if ( ! empty( $args['class'] ) ) {
-    $classes[] = $args['class'];
-}
 ?>
 
-<article class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<article class="podcast-card">
 
-    <?php if ( ! empty( $args['image'] ) ) : ?>
+    <div class="podcast-card__body">
 
-        <a
-            href="<?php echo esc_url( $args['url'] ); ?>"
-            class="card__image"
-        >
+        <div class="podcast-card__badge">
 
-            <img
-                src="<?php echo esc_url( $args['image'] ); ?>"
-                alt=""
-                loading="lazy"
-            >
+            <span class="podcast-dot"></span>
 
-            <?php
-            if ( ! empty( $args['badge'] ) ) {
+            <span>PODCAST</span>
 
-                get_template_part(
-                    'template-parts/components/badge',
-                    null,
-                    array(
-                        'text' => $args['badge'],
-                        'type' => $args['type'],
-                    )
-                );
+        </div>
 
-            }
-            ?>
+        <h3 class="podcast-card__title">
 
-        </a>
+            <a href="<?php the_permalink(); ?>">
 
-    <?php endif; ?>
+                <?php the_title(); ?>
 
-    <div class="card__content">
+            </a>
 
-        <?php if ( ! empty( $args['title'] ) ) : ?>
+        </h3>
 
-            <h3 class="card__title">
+        <?php if ( ! empty( $guest ) ) : ?>
 
-                <a href="<?php echo esc_url( $args['url'] ); ?>">
+            <p class="podcast-card__guest">
 
-                    <?php echo esc_html( $args['title'] ); ?>
-
-                </a>
-
-            </h3>
-
-        <?php endif; ?>
-
-        <?php if ( ! empty( $args['meta'] ) ) : ?>
-
-            <div class="card__meta">
-
-                <?php echo wp_kses_post( $args['meta'] ); ?>
-
-            </div>
-
-        <?php endif; ?>
-
-        <?php if ( ! empty( $args['text'] ) ) : ?>
-
-            <p class="card__text">
-
-                <?php echo esc_html( $args['text'] ); ?>
+                Met <?php echo esc_html( $guest ); ?>
 
             </p>
 
         <?php endif; ?>
 
-        <?php
-        if ( ! empty( $args['button'] ) ) {
+        <p class="podcast-card__meta">
 
-            get_template_part(
-                'template-parts/components/button',
-                null,
-                array(
-                    'label' => $args['button'],
-                    'url'   => $args['url'],
-                    'style' => 'primary',
-                )
-            );
+            <?php if ( ! empty( $duration ) ) : ?>
 
-        }
-        ?>
+                <span><?php echo esc_html( $duration ); ?></span>
+
+                <span class="divider">•</span>
+
+            <?php endif; ?>
+
+            <?php if ( ! empty( $recorded ) ) : ?>
+
+    <span>
+
+        <?php echo esc_html( date_i18n( 'j F Y', strtotime( $recorded ) ) ); ?>
+
+    </span>
+
+<?php endif; ?>
+
+        </p>
+
+        <div class="podcast-card__excerpt">
+
+            <?php echo wp_trim_words( get_the_excerpt(), 28 ); ?>
+
+        </div>
+
+        <div class="podcast-card__footer">
+
+            <?php if ( ! empty( $spotify ) ) : ?>
+
+                <a
+                    href="<?php echo esc_url( $spotify ); ?>"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener"
+                >
+
+                    Luister op Spotify
+
+                </a>
+
+            <?php endif; ?>
+
+            <a
+                href="<?php the_permalink(); ?>"
+                class="podcast-read-more"
+            >
+
+                Lees meer →
+
+            </a>
+
+        </div>
 
     </div>
 
