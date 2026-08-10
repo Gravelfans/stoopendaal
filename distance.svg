@@ -1,0 +1,17 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Beginpunt -->
+    <circle cx="5" cy="12" r="1.8"></circle>
+
+    <!-- Eindpunt -->
+    <circle cx="19" cy="12" r="1.8"></circle>
+
+    <!-- Afstandslijn -->
+    <path d="M7 12H17"></path>
+
+    <!-- Pijlen -->
+    <path d="M9 10L7 12L9 14"></path>
+    <path d="M15 10L17 12L15 14"></path>
+
+</svg>
