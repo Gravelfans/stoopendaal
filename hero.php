@@ -1,128 +1,156 @@
 <?php
 /**
- * Hero Component
+ * Hero V3
+ * STOOPENDAAL
  *
  * @package Stoopendaal
  */
 
-defined( 'ABSPATH' ) || exit;
-
-$args = wp_parse_args(
-    $args ?? array(),
-    array(
-        'label'         => '',
-        'title'         => '',
-        'text'          => '',
-        'image'         => '',
-        'button'        => '',
-        'button_url'    => '',
-        'button_style'  => 'primary',
-        'secondary'     => '',
-        'secondary_url' => '',
-        'class'         => '',
-    )
-);
-
-$classes = array(
-    'hero',
-);
-
-if ( ! empty( $args['class'] ) ) {
-    $classes[] = $args['class'];
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 ?>
 
-<section class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<section class="hero-v2">
 
-    <div class="container">
+    <div class="hero-v2__background">
 
-        <div class="hero__grid">
+        <div class="hero-v2__overlay">
 
-            <div class="hero__content">
+            <div class="container">
 
-                <?php if ( ! empty( $args['label'] ) ) : ?>
+                <div class="hero-v2__content">
 
-                    <span class="hero__label">
-
-                        <?php echo esc_html( $args['label'] ); ?>
-
+                    <span class="hero-v2__label">
+                        STOOPENDAAL GRAVELROADS
                     </span>
 
-                <?php endif; ?>
-
-                <?php if ( ! empty( $args['title'] ) ) : ?>
-
-                    <h1 class="hero__title">
-
-                        <?php echo esc_html( $args['title'] ); ?>
-
+                    <h1>
+                        Ontdek de mooiste gravelroutes van
+                        <span>Nederland</span>
                     </h1>
 
-                <?php endif; ?>
-
-                <?php if ( ! empty( $args['text'] ) ) : ?>
-
-                    <p class="hero__text">
-
-                        <?php echo esc_html( $args['text'] ); ?>
-
+                    <p>
+                        Meer dan <strong>300 zelf gereden routes</strong>,
+                        inclusief GPX-downloads, foto's,
+                        hoogteprofielen en praktische informatie.
                     </p>
 
-                <?php endif; ?>
+                    <div class="hero-v2__buttons">
 
-                <?php if ( ! empty( $args['button'] ) || ! empty( $args['secondary'] ) ) : ?>
+                        <a href="#routes" class="button-primary">
+                            Bekijk routes
+                        </a>
 
-                    <div class="hero__buttons">
+                        <a href="#kaart" class="button-secondary">
+                            Bekijk kaart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-trust">
+
+        <div class="container">
+
+            <div class="hero-trust__grid">
+
+                <div class="hero-trust__item">
+
+                    <div class="hero-trust__icon">
 
                         <?php
-                        if ( ! empty( $args['button'] ) ) {
-
-                            get_template_part(
-                                'template-parts/components/button',
-                                null,
-                                array(
-                                    'label' => $args['button'],
-                                    'url'   => $args['button_url'],
-                                    'style' => $args['button_style'],
-                                )
-                            );
-
-                        }
-
-                        if ( ! empty( $args['secondary'] ) ) {
-
-                            get_template_part(
-                                'template-parts/components/button',
-                                null,
-                                array(
-                                    'label' => $args['secondary'],
-                                    'url'   => $args['secondary_url'],
-                                    'style' => 'secondary',
-                                )
-                            );
-
+                        if ( function_exists( 'stoopendaal_icon' ) ) {
+                            stoopendaal_icon( 'route' );
                         }
                         ?>
 
                     </div>
 
-                <?php endif; ?>
+                    <div>
 
-            </div>
+                        <strong>300+</strong>
 
-            <?php if ( ! empty( $args['image'] ) ) : ?>
+                        <small>Zelf gereden routes</small>
 
-                <div class="hero__image">
-
-                    <img
-                        src="<?php echo esc_url( $args['image'] ); ?>"
-                        alt=""
-                        loading="eager"
-                    >
+                    </div>
 
                 </div>
 
-            <?php endif; ?>
+                <div class="hero-trust__item">
+
+                    <div class="hero-trust__icon">
+
+                        <?php
+                        if ( function_exists( 'stoopendaal_icon' ) ) {
+                            stoopendaal_icon( 'download' );
+                        }
+                        ?>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Gratis</strong>
+
+                        <small>GPX-downloads</small>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-trust__item">
+
+                    <div class="hero-trust__icon">
+
+                        <?php
+                        if ( function_exists( 'stoopendaal_icon' ) ) {
+                            stoopendaal_icon( 'podcast' );
+                        }
+                        ?>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Podcast</strong>
+
+                        <small>Reviews & verhalen</small>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-trust__item">
+
+                    <div class="hero-trust__icon">
+
+                        <?php
+                        if ( function_exists( 'stoopendaal_icon' ) ) {
+                            stoopendaal_icon( 'map' );
+                        }
+                        ?>
+
+                    </div>
+
+                    <div>
+
+                        <strong>12</strong>
+
+                        <small>Provincies</small>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
