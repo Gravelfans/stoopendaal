@@ -1151,4 +1151,124 @@
 
     }
 
+}/* ==========================================================
+   HOMEPAGE ROUTES – COMPACT PREMIUM
+   Alleen voor de homepage
+========================================================== */
+
+.home-routes {
+    padding: 90px 0;
+}
+
+.home-routes .section-heading {
+    margin-bottom: 50px;
+}
+
+.home-routes .section-heading h2 {
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    line-height: 1.08;
+}
+
+.home-routes .section-heading p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.home-routes .routes-grid {
+    gap: 28px;
+}
+
+.home-routes .route-card__content {
+    padding: 28px;
+}
+
+.home-routes .route-card__region {
+    margin-bottom: 14px;
+    font-size: .82rem;
+}
+
+.home-routes .route-card__title {
+    margin-bottom: 14px;
+    font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+}
+
+.home-routes .route-card__summary {
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.home-routes .route-card__meta {
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.home-routes .route-card__stat {
+    padding: 14px 10px;
+}
+
+.home-routes .route-card__button {
+    padding: 15px 20px;
+}
+
+.home-routes .routes-footer {
+    margin-top: 55px;
+}
+
+
+/* ==========================================================
+   HOMEPAGE ROUTES – TABLET
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .home-routes {
+        padding: 80px 0;
+    }
+
+    .home-routes .routes-grid {
+        gap: 24px;
+    }
+
+}
+
+
+/* ==========================================================
+   HOMEPAGE ROUTES – MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .home-routes {
+        padding: 65px 0;
+    }
+
+    .home-routes .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .home-routes .section-heading h2 {
+        font-size: 2.2rem;
+    }
+
+    .home-routes .route-card__content {
+        padding: 24px;
+    }
+
+}
+
+
+/* ==========================================================
+   HOMEPAGE ROUTES – SMALL MOBILE
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .home-routes {
+        padding: 55px 0;
+    }
+
+    .home-routes .section-heading {
+        margin-bottom: 35px;
+    }
+
 }
