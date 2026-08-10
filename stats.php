@@ -1,62 +1,71 @@
-<?php
-/**
- * Route Stats
- *
- * @package Stoopendaal
- */
+<div class="container">
 
-defined( 'ABSPATH' ) || exit;
+    <div class="about-stats-grid">
 
-$distance   = get_field('distance');
-$duration   = get_field('duration');
-$elevation  = get_field('elevation');
-$difficulty = get_field('difficulty');
-?>
+        <article class="about-stat">
 
-<section class="route-stats">
+            <span class="about-stat-number">
 
-    <div class="container">
+                300+
 
-        <div class="stats-grid">
+            </span>
 
-            <?php if($distance): ?>
+            <span class="about-stat-label">
 
-                <article class="stat-card">
-                    <span class="stat-label">Afstand</span>
-                    <h3><?php echo esc_html($distance); ?></h3>
-                </article>
+                Zelf gereden routes
 
-            <?php endif; ?>
+            </span>
 
-            <?php if($duration): ?>
+        </article>
 
-                <article class="stat-card">
-                    <span class="stat-label">Duur</span>
-                    <h3><?php echo esc_html($duration); ?></h3>
-                </article>
+        <article class="about-stat">
 
-            <?php endif; ?>
+            <span class="about-stat-number">
 
-            <?php if($elevation): ?>
+                15.000+
 
-                <article class="stat-card">
-                    <span class="stat-label">Hoogtemeters</span>
-                    <h3><?php echo esc_html($elevation); ?> m</h3>
-                </article>
+            </span>
 
-            <?php endif; ?>
+            <span class="about-stat-label">
 
-            <?php if($difficulty): ?>
+                Gravelkilometers
 
-                <article class="stat-card">
-                    <span class="stat-label">Moeilijkheid</span>
-                    <h3><?php echo esc_html($difficulty); ?></h3>
-                </article>
+            </span>
 
-            <?php endif; ?>
+        </article>
 
-        </div>
+        <article class="about-stat">
+
+            <span class="about-stat-number">
+
+                25+
+
+            </span>
+
+            <span class="about-stat-label">
+
+                Podcastafleveringen
+
+            </span>
+
+        </article>
+
+        <article class="about-stat">
+
+            <span class="about-stat-number">
+
+                11K+
+
+            </span>
+
+            <span class="about-stat-label">
+
+                Instagram volgers
+
+            </span>
+
+        </article>
 
     </div>
 
-</section>
+</div>

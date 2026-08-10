@@ -1,38 +1,42 @@
-<?php
-/**
- * CTA Section
- *
- * @package Stoopendaal
- */
-?>
-
-<section class="cta-section">
+<section class="about-cta">
 
     <div class="container">
 
-        <div class="cta-card">
+        <div class="about-cta__inner">
 
-            <span class="section-eyebrow">
-                Klaar voor je volgende avontuur?
+            <span class="hero-badge">
+
+                🚴 Klaar voor jouw volgende avontuur?
+
             </span>
 
             <h2>
-                Download gratis jouw volgende gravelroute.
+
+                Ontdek de mooiste<br>
+                gravelroutes van Nederland.
+
             </h2>
 
             <p>
-                Ontdek honderden zelf gereden routes, download gratis GPX-bestanden
-                en laat je inspireren door podcasts, reviews en nieuwe avonturen.
+
+                Meer dan 300 zelf gereden routes, gratis GPX-downloads,
+                inspirerende podcasts en eerlijke reviews.
+                Alles om goed voorbereid op pad te gaan.
+
             </p>
 
-            <div class="cta-buttons">
+            <div class="hero-buttons">
 
-                <a href="#routes" class="btn btn-primary">
-                    Bekijk alle routes
+                <a href="/routes/" class="btn btn-primary">
+
+                    Bekijk routes
+
                 </a>
 
-                <a href="#podcast" class="btn btn-outline">
-                    Luister podcast
+                <a href="/samenwerken/" class="btn btn-secondary">
+
+                    Samenwerken
+
                 </a>
 
             </div>

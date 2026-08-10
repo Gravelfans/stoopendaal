@@ -1,119 +1,47 @@
-<section class="hero-v2">
+<div class="about-hero__image"
+     style="background-image:url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-arjan.jpg' ); ?>');">
 
-    <div class="hero-v2__background">
-
-        <div class="hero-v2__overlay">
-
-            <div class="container">
-
-                <div class="hero-v2__content">
-
-                    <span class="hero-v2__label">
-                        STOOPENDAAL GRAVELROADS
-                    </span>
-
-                    <h1>
-                        Ontdek de mooiste gravelroutes van
-                        <span>Nederland</span>
-                    </h1>
-
-                    <p>
-                        Meer dan <strong>300 zelf gereden gravelroutes</strong>,
-                        inclusief gratis GPX-downloads, foto's,
-                        hoogteprofielen en praktische informatie.
-                    </p>
-
-                    <div class="hero-v2__buttons">
-
-                        <?php
-                        get_template_part(
-                            'template-parts/components/button',
-                            null,
-                            array(
-                                'label' => 'Ontdek routes',
-                                'url'   => '#routes',
-                                'style' => 'primary',
-                                'icon'  => true,
-                            )
-                        );
-
-                        get_template_part(
-                            'template-parts/components/button',
-                            null,
-                            array(
-                                'label' => 'Bekijk kaart',
-                                'url'   => '#kaart',
-                                'style' => 'secondary',
-                                'icon'  => false,
-                            )
-                        );
-                        ?>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="hero-trust">
+    <div class="about-hero__overlay">
 
         <div class="container">
 
-            <div class="hero-trust__grid">
+            <div class="about-hero__content">
 
-                <div class="hero-trust__item">
+                <span class="hero-badge">
 
-                    <div class="hero-trust__icon">
-                        <?php if ( function_exists( 'stoopendaal_icon' ) ) stoopendaal_icon( 'route' ); ?>
-                    </div>
+                    👋 Over Arjan
 
-                    <div>
-                        <strong>300+</strong>
-                        <small>Zelf gereden routes</small>
-                    </div>
+                </span>
 
-                </div>
+                <h1 class="about-title">
 
-                <div class="hero-trust__item">
+                   Ik rij voor, jij geniet.<br>                 
+Zodat jij zorgeloos op pad kunt.
 
-                    <div class="hero-trust__icon">
-                        <?php if ( function_exists( 'stoopendaal_icon' ) ) stoopendaal_icon( 'download' ); ?>
-                    </div>
+                </h1>
 
-                    <div>
-                        <strong>Gratis</strong>
-                        <small>GPX-downloads</small>
-                    </div>
+                <p class="about-intro">
 
-                </div>
+                    STOOPENDAAL is ontstaan vanuit een passie voor gravel,
+                    avontuur en het ontdekken van de mooiste plekken van
+                    Nederland. Meer dan 300 routes zijn persoonlijk gereden,
+                    gefotografeerd en beschreven om andere fietsers te inspireren.
 
-                <div class="hero-trust__item">
+                </p>
 
-                    <div class="hero-trust__icon">
-                        <?php if ( function_exists( 'stoopendaal_icon' ) ) stoopendaal_icon( 'podcast' ); ?>
-                    </div>
+                <div class="hero-buttons">
 
-                    <div>
-                        <strong>Podcast</strong>
-                        <small>Reviews & verhalen</small>
-                    </div>
+                    <a href="/routes/" class="btn btn-primary">
 
-                </div>
+                        Bekijk routes
 
-                <div class="hero-trust__item">
+                    </a>
 
-                    <div class="hero-trust__icon">
-                        <?php if ( function_exists( 'stoopendaal_icon' ) ) stoopendaal_icon( 'map' ); ?>
-                    </div>
+                    <a href="/podcast/" class="btn btn-glass">
 
-                    <div>
-                        <strong>12</strong>
-                        <small>Provincies</small>
-                    </div>
+                        Luister podcast
+
+                    </a>
 
                 </div>
 
@@ -123,4 +51,4 @@
 
     </div>
 
-</section>
+</div>
